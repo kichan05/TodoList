@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="todoData"
+            type="com.ckstmznf.todolist.data.TodoItem" />
+        <variable
+            name="priority"
+            type="Integer" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="14dp"
+        android:paddingVertical="18dp">
+
+        <TextView
+            android:id="@+id/txt_todoItem_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:text="@{todoData.title}"
+            tools:text="주제 발표 준비"
+            android:textSize="16sp"
+            android:textFontWeight="700"
+            android:includeFontPadding="false"
+
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            />
+
+        <TextView
+            android:id="@+id/txt_todoItem_importance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:text="중요도 : 상"
+            android:textColor="@color/materialGray6"
+            android:textSize="10sp"
+            android:textFontWeight="700"
+            android:includeFontPadding="false"
+
+            android:layout_marginHorizontal="12dp"
+            android:layout_marginTop="5dp"
+
+            app:layout_constraintTop_toBottomOf="@id/txt_todoItem_title"
+            app:layout_constraintStart_toStartOf="@id/txt_todoItem_title"
+            />
+
+        <TextView
+            android:id="@+id/txt_todoItem_deadLine"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:text="금합 : 상 / (마감일 : 4월 8일)"
+            android:textColor="@color/materialGray6"
+            android:textSize="10sp"
+            android:textFontWeight="700"
+            android:includeFontPadding="false"
+
+            android:layout_marginTop="5dp"
+
+            app:layout_constraintTop_toBottomOf="@id/txt_todoItem_importance"
+            app:layout_constraintStart_toStartOf="@id/txt_todoItem_importance"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:text="@{priority}"
+            tools:text="1"
+            android:textColor="@color/royalBlue"
+            android:textSize="64sp"
+            android:textFontWeight="700"
+
+            android:includeFontPadding="false"
+
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
