@@ -19,7 +19,7 @@
 
             app:title="TodoList"
 
-            android:background="@color/white"
+            android:background="?toolbarBackground"
             android:elevation="4dp"
 
             app:layout_constraintTop_toTopOf="parent"
@@ -48,8 +48,8 @@
             android:text="추가하기"
             android:textSize="24dp"
             android:textFontWeight="500"
-            app:rippleColor="@color/flatBlack"
 
+            app:rippleColor="@color/flatBlack"
 
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"

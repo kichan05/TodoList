@@ -3,8 +3,12 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/user/AndroidStudioProjects/TodoList/app/src/main/res/drawable/sc_importance.xml" value="0.155" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/TodoList/app/src/main/res/drawable/sc_importance_text.xml" value="0.1" />
         <entry key="..\:/Users/user/AndroidStudioProjects/TodoList/app/src/main/res/drawable/shape_square_round.xml" value="0.1095" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/TodoList/app/src/main/res/drawable/shape_toggle_button_bg.xml" value="0.155" />
         <entry key="..\:/Users/user/AndroidStudioProjects/TodoList/app/src/main/res/font/font.xml" value="0.7821428571428571" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/TodoList/app/src/main/res/layout/activity_add.xml" value="0.25" />
         <entry key="..\:/Users/user/AndroidStudioProjects/TodoList/app/src/main/res/layout/activity_main.xml" value="0.2" />
         <entry key="..\:/Users/user/AndroidStudioProjects/TodoList/app/src/main/res/layout/row_todo_list_item.xml" value="0.33" />
       </map>

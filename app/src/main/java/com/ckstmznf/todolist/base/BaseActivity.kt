@@ -20,7 +20,7 @@ abstract class BaseActivity<D : ViewDataBinding>(
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
+        binding = DataBindingUtil.setContentView(this, layoutResID)
         binding.lifecycleOwner = this
     }
 }

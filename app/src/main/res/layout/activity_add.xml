@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.add.AddActivity">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar_add"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+
+            app:title="Todo List"
+
+            android:background="?toolbarBackground"
+            android:elevation="4dp"
+
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            />
+
+        <TextView
+            android:id="@+id/txt_add_todoTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            style="@style/inputTitle"
+
+            android:text="할 일"
+            android:textFontWeight="500"
+
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="24dp"
+
+            app:layout_constraintTop_toBottomOf="@id/toolbar_add"
+            app:layout_constraintStart_toStartOf="parent"
+            />
+
+        <EditText
+            android:id="@+id/edt_add_todo"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+
+            android:textSize="24sp"
+
+            android:layout_marginHorizontal="24dp"
+            android:includeFontPadding="false"
+
+            app:layout_constraintTop_toTopOf="@+id/txt_add_todoTitle"
+            app:layout_constraintBottom_toBottomOf="@+id/txt_add_todoTitle"
+            app:layout_constraintStart_toEndOf="@id/txt_add_todoTitle"
+            app:layout_constraintEnd_toEndOf="parent"
+            />
+
+        <TextView
+            android:id="@+id/txt_add_importanceTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            style="@style/inputTitle"
+
+            android:text="중요도"
+            android:textFontWeight="500"
+
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="24dp"
+
+            app:layout_constraintTop_toBottomOf="@id/edt_add_todo"
+            app:layout_constraintStart_toStartOf="parent"
+            />
+
+        <RadioGroup
+            android:id="@+id/rg_add_choiceImportance"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+
+            android:layout_marginHorizontal="64dp"
+            android:layout_marginTop="12dp"
+
+            android:background="@drawable/shape_toggle_button_bg"
+
+            android:orientation="horizontal"
+
+            app:layout_constraintTop_toBottomOf="@id/txt_add_importanceTitle"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            >
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:text="상"
+                android:textColor="@drawable/sc_importance_text"
+                android:textSize="24sp"
+                android:includeFontPadding="false"
+
+                android:background="@drawable/sc_importance"
+                android:button="@null"
+
+                android:paddingVertical="6dp"
+
+                android:layout_weight="1"
+                android:gravity="center"
+                />
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:text="중"
+                android:textColor="@drawable/sc_importance_text"
+                android:textSize="24sp"
+                android:includeFontPadding="false"
+
+                android:background="@drawable/sc_importance"
+                android:button="@null"
+
+                android:paddingVertical="6dp"
+
+                android:layout_weight="1"
+                android:gravity="center"
+                />
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:text="하"
+                android:textColor="@drawable/sc_importance_text"
+                android:textSize="24sp"
+                android:includeFontPadding="false"
+
+                android:background="@drawable/sc_importance"
+                android:button="@null"
+
+                android:paddingVertical="6dp"
+
+                android:layout_weight="1"
+                android:gravity="center"
+                />
+
+        </RadioGroup>
+
+
+        <TextView
+            android:id="@+id/txt_add_deadLineTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            style="@style/inputTitle"
+
+            android:text="마감일"
+            android:textFontWeight="500"
+
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="24dp"
+
+            app:layout_constraintTop_toBottomOf="@id/rg_add_choiceImportance"
+            app:layout_constraintStart_toStartOf="parent"
+            />
+
+        <DatePicker
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:datePickerMode="spinner"
+            android:calendarViewShown="false"
+
+            android:layout_marginTop="20dp"
+
+            app:layout_constraintTop_toBottomOf="@id/txt_add_deadLineTitle"
+            app:layout_constraintStart_toStartOf="@id/txt_add_deadLineTitle"
+            app:layout_constraintEnd_toEndOf="parent"
+            />
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+
+            android:text="할 일 등록 "
+            android:textSize="24sp"
+            android:textFontWeight="700"
+
+            app:rippleColor="@color/flatBlack"
+
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            />
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
