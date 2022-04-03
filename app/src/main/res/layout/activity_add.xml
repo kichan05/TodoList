@@ -4,7 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-
+        <variable
+            name="viewModel"
+            type="com.ckstmznf.todolist.ui.add.AddViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -49,6 +51,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
 
+            android:text="@={viewModel.todoTitle}"
             android:textSize="24sp"
 
             android:layout_marginHorizontal="24dp"
@@ -85,6 +88,8 @@
             android:layout_marginHorizontal="64dp"
             android:layout_marginTop="12dp"
 
+            android:checkedButton="@={viewModel._importance}"
+
             android:background="@drawable/shape_toggle_button_bg"
 
             android:orientation="horizontal"
@@ -95,6 +100,7 @@
             >
 
             <RadioButton
+                android:id="@+id/radioBtn_add_high"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
 
@@ -113,6 +119,7 @@
                 />
 
             <RadioButton
+                android:id="@+id/radioBtn_add_middle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
 
@@ -131,6 +138,7 @@
                 />
 
             <RadioButton
+                android:id="@+id/radioBtn_add_low"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
 
@@ -138,6 +146,7 @@
                 android:textColor="@drawable/sc_importance_text"
                 android:textSize="24sp"
                 android:includeFontPadding="false"
+
 
                 android:background="@drawable/sc_importance"
                 android:button="@null"
@@ -172,6 +181,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
 
+            android:year="@{viewModel.deadLineYear}"
+            android:month="@{viewModel.deadLineMonth}"
+            android:day="@{viewModel.deadLineDay}"
+            android:onDateChanged="@{(v, year, month, day) -> viewModel.onDateChange(year, month, day)}"
+
             android:datePickerMode="spinner"
             android:calendarViewShown="false"
 
@@ -183,6 +197,7 @@
             />
 
         <Button
+            android:id="@+id/btn_add_submit"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
 
