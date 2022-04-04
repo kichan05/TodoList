@@ -6,7 +6,7 @@
     <data>
         <variable
             name="todoData"
-            type="com.ckstmznf.todolist.data.TodoItem" />
+            type="com.ckstmznf.todolist.data.model.TodoItem" />
         <variable
             name="priority"
             type="Integer" />

@@ -1,6 +1,5 @@
-package com.ckstmznf.todolist.data
+package com.ckstmznf.todolist.data.model
 
-import java.sql.Timestamp
 import java.util.*
 
 data class TodoItem(

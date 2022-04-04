@@ -1,4 +1,4 @@
-package com.ckstmznf.todolist.data
+package com.ckstmznf.todolist.data.model
 
 object Importance {
     val HIGH = 0
