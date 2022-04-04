@@ -53,7 +53,7 @@ class AddViewModel : ViewModel() {
             val todoData = TodoItem(
                 title = todoTitle.value!!,
                 importance = importance,
-                deadLine = Date(deadLineYear.value!!, deadLineMonth.value!!, deadLineDay.value!!)
+                deadLine = Date(deadLineYear.value!! - 1900, deadLineMonth.value!!, deadLineDay.value!!, 0, 0, 0)
             )
 
             state.postValue(repo.createTodo(todoData).toState())
