@@ -5,4 +5,5 @@ import com.ckstmznf.todolist.util.Result
 
 interface TodoRepository {
     suspend fun createTodo(todoData : TodoItem) : Result
+    suspend fun readTodo() : List<TodoItem>
 }

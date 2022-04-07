@@ -17,4 +17,16 @@ class TodoRepositoryImpl : TodoRepository {
 
         return Result.SUCCESS
     }
+
+    override suspend fun readTodo(): List<TodoItem> {
+        val result = mutableListOf<TodoItem>()
+
+        val documents = db.collection("todo").get().await()
+
+        for(i in documents){
+            result.add(i.toObject(TodoItem::class.java))
+        }
+
+        return result
+    }
 }
