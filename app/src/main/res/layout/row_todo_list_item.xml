@@ -12,135 +12,171 @@
             type="Integer" />
     </data>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <com.chauthai.swipereveallayout.SwipeRevealLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingHorizontal="14dp"
-        android:paddingVertical="18dp"
+        android:layout_height="100dp"
 
-        android:clickable="true"
-        android:focusable="true"
-        android:background="?android:attr/selectableItemBackground">
+        app:mode="normal"
+        app:dragEdge="left"
 
-        <TextView
-            android:id="@+id/txt_todoItem_title"
+        android:background="?attr/backgroundColor"
+        >
+        <LinearLayout
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
+            >
+            <ImageButton
+                android:layout_width="100dp"
+                android:layout_height="100dp"
 
-            android:text="@{todoData.title}"
-            tools:text="주제 발표 준비"
-            android:textSize="16sp"
-            android:textFontWeight="700"
-            android:includeFontPadding="false"
+                android:src="@drawable/ic_check"
+                android:background="?attr/colorPrimary"
+                />
+            <ImageButton
+                android:layout_width="100dp"
+                android:layout_height="100dp"
 
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            />
+                android:src="@drawable/ic_edit"
+                android:background="@color/MacaroniAndCheese"
+                />
+            <ImageButton
+                android:layout_width="100dp"
+                android:layout_height="100dp"
 
-        <TextView
-            android:id="@+id/txt_todoItem_importanceTitle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+                android:src="@drawable/ic_delete"
+                android:background="@color/frenchRose"
+                />
+        </LinearLayout>
 
-            android:text="중요도 : "
-            android:textColor="@color/materialGray6"
-            android:textSize="10sp"
-            android:textFontWeight="700"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:paddingHorizontal="14dp"
+            android:paddingVertical="12dp"
 
-            android:layout_marginHorizontal="12dp"
-            android:layout_marginTop="5dp"
+            android:background="?attr/backgroundColor">
 
-            app:layout_constraintTop_toBottomOf="@id/txt_todoItem_title"
-            app:layout_constraintStart_toStartOf="@id/txt_todoItem_title"
-            />
+            <TextView
+                android:id="@+id/txt_todoItem_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+                android:text="@{todoData.title}"
+                tools:text="주제 발표 준비"
+                android:textSize="16sp"
+                android:textFontWeight="700"
+                android:includeFontPadding="false"
 
-            app:bindDegree="@{todoData.importance}"
-            tools:text="상"
-            android:textColor="@color/materialGray6"
-            android:textSize="10sp"
-            android:textFontWeight="700"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                />
 
-            app:layout_constraintTop_toTopOf="@id/txt_todoItem_importanceTitle"
-            app:layout_constraintBottom_toBottomOf="@id/txt_todoItem_importanceTitle"
-            app:layout_constraintStart_toEndOf="@id/txt_todoItem_importanceTitle"
-            />
+            <TextView
+                android:id="@+id/txt_todoItem_importanceTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
 
+                android:text="중요도 : "
+                android:textColor="@color/materialGray6"
+                android:textSize="10sp"
+                android:textFontWeight="700"
 
+                android:layout_marginHorizontal="12dp"
+                android:layout_marginTop="5dp"
 
-        <TextView
-            android:id="@+id/txt_todoItem_deadLineTitle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/txt_todoItem_title"
+                app:layout_constraintStart_toStartOf="@id/txt_todoItem_title"
+                />
 
-            android:text="급함 : "
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
 
-            android:textColor="@color/materialGray6"
-            android:textSize="10sp"
-            android:textFontWeight="700"
-            android:includeFontPadding="false"
+                app:bindDegree="@{todoData.importance}"
+                tools:text="상"
+                android:textColor="@color/materialGray6"
+                android:textSize="10sp"
+                android:textFontWeight="700"
 
-            android:layout_marginTop="5dp"
-
-            app:layout_constraintTop_toBottomOf="@id/txt_todoItem_importanceTitle"
-            app:layout_constraintStart_toStartOf="@id/txt_todoItem_importanceTitle"
-            />
-
-        <TextView
-            android:id="@+id/txt_todoItem_deadLineValue"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-
-            app:bindDegree="@{todoData.urgency}"
-            tools:text="상"
-
-            android:textColor="@color/materialGray6"
-            android:textSize="10sp"
-            android:textFontWeight="700"
-            android:includeFontPadding="false"
-
-            app:layout_constraintTop_toTopOf="@id/txt_todoItem_deadLineTitle"
-            app:layout_constraintBottom_toBottomOf="@+id/txt_todoItem_deadLineTitle"
-            app:layout_constraintStart_toEndOf="@id/txt_todoItem_deadLineTitle"
-            />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-
-            android:text="@{` / (마감일 : ` + todoData.deadLineFormat + `)`}"
-            tools:text=" / (마감일 : 4월 7일)"
-            android:textColor="@color/materialGray6"
-            android:textSize="10sp"
-            android:textFontWeight="700"
-            android:includeFontPadding="false"
-
-            app:layout_constraintTop_toTopOf="@id/txt_todoItem_deadLineTitle"
-            app:layout_constraintBottom_toBottomOf="@id/txt_todoItem_deadLineTitle"
-            app:layout_constraintStart_toEndOf="@id/txt_todoItem_deadLineValue"
-            />
+                app:layout_constraintTop_toTopOf="@id/txt_todoItem_importanceTitle"
+                app:layout_constraintBottom_toBottomOf="@id/txt_todoItem_importanceTitle"
+                app:layout_constraintStart_toEndOf="@id/txt_todoItem_importanceTitle"
+                />
 
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
 
-            android:text="@{priority + ``}"
-            tools:text="1"
-            android:textColor="?attr/colorPrimary"
-            android:textSize="64sp"
-            android:textFontWeight="700"
+            <TextView
+                android:id="@+id/txt_todoItem_deadLineTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
 
-            android:includeFontPadding="false"
+                android:text="급함 : "
 
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            />
+                android:textColor="@color/materialGray6"
+                android:textSize="10sp"
+                android:textFontWeight="700"
+                android:includeFontPadding="false"
+
+                android:layout_marginTop="5dp"
+
+                app:layout_constraintTop_toBottomOf="@id/txt_todoItem_importanceTitle"
+                app:layout_constraintStart_toStartOf="@id/txt_todoItem_importanceTitle"
+                />
+
+            <TextView
+                android:id="@+id/txt_todoItem_deadLineValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                app:bindDegree="@{todoData.urgency}"
+                tools:text="상"
+
+                android:textColor="@color/materialGray6"
+                android:textSize="10sp"
+                android:textFontWeight="700"
+                android:includeFontPadding="false"
+
+                app:layout_constraintTop_toTopOf="@id/txt_todoItem_deadLineTitle"
+                app:layout_constraintBottom_toBottomOf="@+id/txt_todoItem_deadLineTitle"
+                app:layout_constraintStart_toEndOf="@id/txt_todoItem_deadLineTitle"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:text="@{` / (마감일 : ` + todoData.deadLineFormat + `)`}"
+                tools:text=" / (마감일 : 4월 7일)"
+                android:textColor="@color/materialGray6"
+                android:textSize="10sp"
+                android:textFontWeight="700"
+                android:includeFontPadding="false"
+
+                app:layout_constraintTop_toTopOf="@id/txt_todoItem_deadLineTitle"
+                app:layout_constraintBottom_toBottomOf="@id/txt_todoItem_deadLineTitle"
+                app:layout_constraintStart_toEndOf="@id/txt_todoItem_deadLineValue"
+                />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:text="@{priority + ``}"
+                tools:text="1"
+                android:textColor="?attr/colorPrimary"
+                android:textSize="50sp"
+                android:textFontWeight="700"
+
+                android:includeFontPadding="false"
+
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.chauthai.swipereveallayout.SwipeRevealLayout>
 </layout>

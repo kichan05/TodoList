@@ -12,7 +12,9 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".ui.add.AddActivity">
+        tools:context=".ui.add.AddActivity"
+
+        android:background="?attr/backgroundColor">
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar_add"

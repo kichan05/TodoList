@@ -20,6 +20,8 @@
         <item name="buttonBackgroundColor">@color/royalBlue</item>
         <item name="toolbarBackground">@color/white</item>
 
+        <item name="backgroundColor">#ffffff</item>
+
         <item name="android:textViewStyle">@style/TextViewStyle</item>
         <item name="android:buttonStyle">@style/ButtonStyle</item>
         <item name="android:editTextStyle">@style/EditTextStyle</item>
