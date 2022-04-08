@@ -4,6 +4,8 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.activity.viewModels
+import androidx.recyclerview.widget.DividerItemDecoration
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.ckstmznf.todolist.R
 import com.ckstmznf.todolist.base.BaseActivity
 import com.ckstmznf.todolist.databinding.ActivityMainBinding
@@ -24,11 +26,16 @@ class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main) {
         }
 
         binding.recyclerMainTodoList.adapter = MainTodoListAdapter()
+        binding.recyclerMainTodoList.addItemDecoration(DividerItemDecoration(this, LinearLayoutManager(this).orientation))
 
 
         binding.swipeMain.setOnRefreshListener{
             viewModel.readTodo()
-            binding.swipeMain.isRefreshing = false
         }
+    }
+
+    override fun onRestart() {
+        super.onRestart()
+        viewModel.readTodo()
     }
 }

@@ -1,11 +1,13 @@
 package com.ckstmznf.todolist.data.model
 
 import android.util.Log
+import java.text.SimpleDateFormat
 import java.time.Duration
 import java.time.LocalDate
 import java.time.LocalDateTime
 import java.time.ZoneId
 import java.util.*
+import java.util.logging.SimpleFormatter
 
 data class TodoItem(
     val title : String = "",
@@ -14,7 +16,6 @@ data class TodoItem(
 ){
     val urgency : Int //급한 정도를 반환한다.
         get() {
-//            val between = Duration.between(LocalDate.now(), deadLine?.toInstant()?.atZone(ZoneId.systemDefault())?.toLocalDate())
             val betweenSecond = deadLine?.time!! - Date().time
             val betweenDay = betweenSecond / 1000 / 60 / 60 / 24 + 1
 
@@ -25,6 +26,10 @@ data class TodoItem(
             }
         }
 
+    val deadLineFormat : String
+        get() {
+            return SimpleDateFormat("MM월 dd일").format(deadLine)
+        }
 
     val priority : Int
         get() {

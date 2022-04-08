@@ -53,18 +53,6 @@ class AddViewModel : ViewModel() {
                 deadLine = Date(deadLineYear.value!! - 1900, deadLineMonth.value!!, deadLineDay.value!!, 0, 0, 0),
             )
 
-//            with(todoData){
-//                this.priority = if(importance == Degree.HIGH && urgency == Degree.HIGH) 1
-//                else if (importance == Degree.MIDDLE && urgency == Degree.HIGH) 2
-//                else if (importance == Degree.LOW && urgency == Degree.HIGH) 3
-//                else if (importance == Degree.HIGH && urgency == Degree.MIDDLE) 4
-//                else if (importance == Degree.HIGH && urgency == Degree.LOW) 5
-//                else if (importance == Degree.MIDDLE && urgency == Degree.MIDDLE) 6
-//                else if (importance == Degree.LOW && urgency == Degree.MIDDLE) 7
-//                else if (importance == Degree.MIDDLE && urgency == Degree.LOW) 8
-//                else 9
-//            }
-
             state.postValue(repo.createTodo(todoData).toState())
         }
     }

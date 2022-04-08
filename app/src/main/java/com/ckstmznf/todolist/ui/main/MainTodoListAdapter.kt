@@ -13,7 +13,6 @@ class MainTodoListAdapter : ListAdapter<TodoItem, RecyclerView.ViewHolder>(MainD
         override fun areItemsTheSame(oldItem: TodoItem, newItem: TodoItem): Boolean = oldItem.title == newItem.title
 
         override fun areContentsTheSame(oldItem: TodoItem, newItem: TodoItem): Boolean = oldItem == newItem
-
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {

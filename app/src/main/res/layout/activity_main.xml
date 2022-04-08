@@ -34,6 +34,8 @@
             android:layout_width="0dp"
             android:layout_height="0dp"
 
+            app:bindSwipeOnRefresh="@{viewModel.refreshState}"
+
             app:layout_constraintTop_toBottomOf="@id/toolbar_main"
             app:layout_constraintBottom_toTopOf="@id/btn_main_addTodo"
             app:layout_constraintStart_toStartOf="parent"

@@ -2,6 +2,7 @@ package com.ckstmznf.todolist.ui.main
 
 import android.util.Log
 import androidx.databinding.ObservableArrayList
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.ckstmznf.todolist.data.model.TodoItem
@@ -13,14 +14,19 @@ class MainViewModel : ViewModel() {
     val repo : TodoRepositoryImpl = TodoRepositoryImpl()
 
     val todoList = ObservableArrayList<TodoItem>()
+    val refreshState = MutableLiveData(true)
 
     fun readTodo(){
+        refreshState.value = true
         todoList.clear()
 
         viewModelScope.launch(Dispatchers.IO) {
-            val a = repo.readTodo()
+            val a = repo.readTodo().sortedBy {
+                it.priority
+            }
             todoList.addAll(a)
-            Log.d("todoList", a.toString())
+
+            refreshState.postValue(false)
         }
     }
 
