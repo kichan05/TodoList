@@ -54,7 +54,9 @@
             android:paddingHorizontal="14dp"
             android:paddingVertical="12dp"
 
-            android:background="?attr/backgroundColor">
+            android:clickable="true"
+            android:focusable="true"
+            android:background="@drawable/rp_todo_list_item">
 
             <TextView
                 android:id="@+id/txt_todoItem_title"
